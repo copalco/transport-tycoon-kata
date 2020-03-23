@@ -1,3 +1,6 @@
+tcr:
+	./tcr.sh
+
 ci-build: test-with-coverage type-check style-check coverage-report
 
 test:
