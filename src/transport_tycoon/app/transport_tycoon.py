@@ -1,4 +1,4 @@
 class TransportTycoonApp:
 
-    def deliver(self) -> None:
+    def deliver(self, cargo: list) -> None:
         pass
