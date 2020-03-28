@@ -1,0 +1,3 @@
+class TransportTycoonApp:
+
+    pass
