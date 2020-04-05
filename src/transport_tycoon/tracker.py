@@ -1,0 +1,2 @@
+class CargoTracker:
+    pass
