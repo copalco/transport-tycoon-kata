@@ -1,2 +1,4 @@
 class CargoTracker:
-    pass
+
+    def loaded(self) -> None:
+        pass
