@@ -11,6 +11,12 @@ class TestCargoTracker(unittest.TestCase):
         tracker = CargoTracker()
         self.assertEqual(tracker.registered, 0)
 
+    def test_cargo_can_be_registered(self) -> None:
+        tracker = CargoTracker()
+        tracker.register()
+        tracker.register()
+        self.assertEqual(tracker.registered, 2)
+
     def test_knows_when_cargo_was_loaded_on_vehicle(self) -> None:
         tracker = CargoTracker()
         tracker.cargo_has_been_loaded()

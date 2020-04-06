@@ -15,3 +15,6 @@ class CargoTracker:
 
     def cargo_has_been_delivered(self) -> None:
         self.events.append(CargoDelivered())
+
+    def register(self) -> None:
+        self.registered += 1
