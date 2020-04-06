@@ -8,5 +8,5 @@ class CargoTracker:
     def __init__(self) -> None:
         self.events: typing.List[CargoLoaded] = []
 
-    def loaded(self) -> None:
+    def cargo_has_been_loaded(self) -> None:
         self.events.append(CargoLoaded())

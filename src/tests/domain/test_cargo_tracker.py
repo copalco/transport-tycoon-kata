@@ -8,5 +8,5 @@ class TestCargoTracker(unittest.TestCase):
 
     def test_knows_when_cargo_was_loaded_on_vehicle(self) -> None:
         tracker = CargoTracker()
-        tracker.loaded()
+        tracker.cargo_has_been_loaded()
         assert tracker.events == [CargoLoaded()]
