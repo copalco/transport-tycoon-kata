@@ -7,6 +7,7 @@ from transport_tycoon.domain.cargo_loaded import CargoLoaded
 class CargoTracker:
 
     def __init__(self) -> None:
+        self.registered: int = 0
         self.events: typing.List[typing.Union[CargoLoaded, CargoDelivered]] = []
 
     def cargo_has_been_loaded(self) -> None:
