@@ -9,3 +9,4 @@ class TestEventManager(unittest.TestCase):
     def test_emits_events(self) -> None:
         manager = EventManager()
         manager.record(Event())
+        self.assertEqual(manager.events, [Event()])
