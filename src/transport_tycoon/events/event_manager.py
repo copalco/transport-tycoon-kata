@@ -1,3 +1,4 @@
 class EventManager:
 
-    pass
+    def record(self) -> None:
+        pass
