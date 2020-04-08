@@ -1,16 +1,16 @@
-from typing import List
+from typing import List, Callable, Dict
 
 from transport_tycoon.domain.cargo_delivered import CargoDelivered
-from transport_tycoon.events.event import Event
 
 
 class EventManager:
 
     def __init__(self) -> None:
-        self.events: List[Event] = []
+        self.subscribers: Dict[CargoDelivered, Callable[[CargoDelivered], None]] = {}
+        self.events: List[CargoDelivered] = []
 
-    def record(self, event: Event) -> None:
+    def record(self, event: CargoDelivered) -> None:
         self.events.append(event)
 
-    def subscribe_for(self, event: CargoDelivered) -> None:
-        pass
+    def subscribe_for(self, event: CargoDelivered, subscriptor: Callable[[CargoDelivered], None]) -> None:
+        self.subscribers[event] = subscriptor

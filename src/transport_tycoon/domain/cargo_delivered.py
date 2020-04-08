@@ -1,6 +1,5 @@
-from dataclasses import dataclass
+from transport_tycoon.domain.event import DomainEvent
 
 
-@dataclass(frozen=True)
-class CargoDelivered:
+class CargoDelivered(DomainEvent):
     pass
