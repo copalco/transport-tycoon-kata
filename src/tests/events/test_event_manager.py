@@ -2,7 +2,6 @@ import unittest
 from typing import Optional
 
 from transport_tycoon.domain.cargo_delivered import CargoDelivered
-from transport_tycoon.events.event import Event
 from transport_tycoon.events.event_manager import EventManager
 
 
