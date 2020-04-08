@@ -20,6 +20,16 @@ class TestEventManager(unittest.TestCase):
         manager.record(CargoDelivered())
         self.assertEqual(subscriber.received, CargoDelivered())
 
+    def test_subscribers_for_similar_event_will_both_get_id(self) -> None:
+        first_subscriber = FakeDeliveredSubcriber()
+        second_subscriber = FakeDeliveredSubcriber()
+        manager = EventManager()
+        manager.subscribe_for(CargoDelivered, first_subscriber.handle_cargo_delivered)
+        manager.subscribe_for(CargoDelivered, second_subscriber.handle_cargo_delivered)
+        manager.record(CargoDelivered())
+        self.assertEqual(first_subscriber.received, CargoDelivered())
+        self.assertEqual(second_subscriber.received, CargoDelivered())
+
 
 class FakeDeliveredSubcriber:
 

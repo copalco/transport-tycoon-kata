@@ -18,4 +18,7 @@ class EventManager:
             subscriber(event)
 
     def subscribe_for(self, event_type: Type[DomainEvent], subscriptor: Callable[[DomainEvent], None]) -> None:
-        self.subscribers[event_type] = [subscriptor]
+        try:
+            self.subscribers[event_type].append(subscriptor)
+        except KeyError:
+            self.subscribers[event_type] = [subscriptor]
